@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Outer ring — eye shape -->
+  <ellipse cx="18" cy="18" rx="13" ry="9" fill="none" stroke="#1A3461" stroke-width="1.2"/>
+  <!-- Iris -->
+  <circle cx="18" cy="18" r="5.5" fill="#1A3461" stroke="#D98A2B" stroke-width="0.8"/>
+  <!-- Pupil -->
+  <circle cx="18" cy="18" r="2.8" fill="#D98A2B"/>
+  <!-- Pupil highlight -->
+  <circle cx="19.2" cy="16.8" r="0.9" fill="#FFCD00" opacity="0.7"/>
+  <!-- Cross-out diagonal — no tracking -->
+  <line x1="5" y1="5" x2="31" y2="31" stroke="#DA251D" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Cross-out gap white (so it reads over the eye) -->
+  <line x1="7" y1="7" x2="29" y2="29" stroke="#DA251D" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+  <!-- Corner dots — cursor-like -->
+  <circle cx="4" cy="18" r="1" fill="#D98A2B" opacity="0.5"/>
+  <circle cx="32" cy="18" r="1" fill="#D98A2B" opacity="0.5"/>
+  <circle cx="18" cy="4" r="1" fill="#D98A2B" opacity="0.5"/>
+  <circle cx="18" cy="32" r="1" fill="#D98A2B" opacity="0.5"/>
+</svg>

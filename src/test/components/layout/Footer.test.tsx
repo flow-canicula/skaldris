@@ -21,6 +21,8 @@ describe('Footer', () => {
 
   it('renders the Skaldris brand name', () => {
     render(<Footer />);
-    expect(screen.getByText(/skaldris/i)).toBeInTheDocument();
+    // Multiple Skaldris text elements exist (wordmark + copyright)
+    const matches = screen.getAllByText(/skaldris/i);
+    expect(matches.length).toBeGreaterThan(0);
   });
 });

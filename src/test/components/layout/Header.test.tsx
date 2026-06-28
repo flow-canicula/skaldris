@@ -19,9 +19,10 @@ describe('Header', () => {
     expect(link).toHaveAttribute('href', '/');
   });
 
-  it('renders the wordmark text', () => {
+  it('renders the wordmark or home link with Skaldris in the label', () => {
     render(<Header />);
-    expect(screen.getByText(/skaldris/i)).toBeInTheDocument();
+    // Wordmark is in aria-label of the home link, not as visible text
+    expect(screen.getByRole('link', { name: /skaldris/i })).toBeInTheDocument();
   });
 
   it('renders navigation', () => {

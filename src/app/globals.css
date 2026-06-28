@@ -544,6 +544,13 @@
     50%       { transform: scale(1.6); opacity: 0.5; }
   }
 
+  /* ── Concentric pulse ring (contact hero) ── */
+  @keyframes pulse-ring {
+    0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+    80%  { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+  }
+
   /* ── Hero number counter ── */
   @keyframes count-up {
     from { opacity: 0; transform: translateY(20px); }

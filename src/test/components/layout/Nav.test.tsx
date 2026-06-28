@@ -9,9 +9,8 @@ describe('Nav', () => {
     expect(screen.getByRole('navigation', { name: /main navigation/i })).toBeInTheDocument();
   });
 
-  it('renders Work and Contact links', () => {
+  it('renders Contact link', () => {
     render(<Nav />);
-    expect(screen.getAllByRole('link', { name: /work/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /contact/i }).length).toBeGreaterThan(0);
   });
 
@@ -36,7 +35,7 @@ describe('Nav', () => {
   it('closes mobile menu when a link is clicked', () => {
     render(<Nav />);
     fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    const links = screen.getAllByRole('link', { name: /work/i });
+    const links = screen.getAllByRole('link', { name: /contact/i });
     fireEvent.click(links[links.length - 1]!);
     expect(screen.queryByRole('button', { name: /close menu/i })).not.toBeInTheDocument();
   });
@@ -55,9 +54,9 @@ describe('Nav', () => {
   });
 
   it('marks active link with aria-current="page" for current pathname', () => {
-    vi.spyOn(nextNavigation, 'usePathname').mockReturnValue('/work');
+    vi.spyOn(nextNavigation, 'usePathname').mockReturnValue('/contact');
     render(<Nav />);
-    const activeLinks = screen.getAllByRole('link', { name: /work/i }).filter(
+    const activeLinks = screen.getAllByRole('link', { name: /contact/i }).filter(
       (el) => el.getAttribute('aria-current') === 'page'
     );
     expect(activeLinks.length).toBeGreaterThan(0);

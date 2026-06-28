@@ -1,10 +1,10 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.skaldris.com';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flow.skaldris.com';
 
 export const SITE_NAME = 'Skaldris';
 
 export const SITE_DESCRIPTION =
-  'Personal portfolio of Jaime "Flow" Canicula, MTM — Technical Architect, Engineering Leader, and Senior Software Engineering Professional based in Metro Manila, Philippines.';
+  'Jaime "Flow" Canicula, MTM — Technical Architect, AWS Certified Solutions Architect, and Engineering Leader based in Metro Manila, Philippines. 13+ years building cloud platforms, distributed systems, and engineering teams.';
 
 export const SOCIAL = {
   githubPrimary: 'https://github.com/flow-canicula',
@@ -12,18 +12,28 @@ export const SOCIAL = {
 } as const;
 
 export const CONTACT = {
-  email: 'jaimecanicula@gmail.com',
+  email: 'jaimecanicula@skaldris.com',
   security: 'security@skaldris.com',
 } as const;
 
 export const NAV_LINKS = [
-  { label: 'Work', href: '/work' },
   { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const OG_DEFAULTS = {
-  image: '/og/og-image.jpg',
+  image: '/backgrounds/IMG_3454.jpeg',
   imageWidth: 1200,
   imageHeight: 630,
-  imageAlt: 'Jaime "Flow" Canicula — Technical Architect and Engineering Leader, Philippines',
+  imageAlt: 'Jaime "Flow" Canicula — Technical Architect, AWS Certified Solutions Architect, and Engineering Leader based in Metro Manila, Philippines',
+} as const;
+
+export const PERSON = {
+  name: 'Jaime Canicula',
+  alternateName: 'Flow',
+  jobTitle: 'Technical Architect',
+  description: 'Technical Architect, AWS Certified Solutions Architect – Professional, and Engineering Leader with 13+ years of experience across cloud architecture, software development, DevOps, and technical program delivery. Based in Mandaluyong City, Metro Manila, Philippines.',
+  image: '/og/og-image.jpg',
+  addressLocality: 'Mandaluyong City',
+  addressRegion: 'Metro Manila',
+  addressCountry: 'PH',
 } as const;

@@ -20,7 +20,7 @@ export const WORK_HISTORY: WorkEntry[] = [
     companyShort: 'FSG / Digipay',
     type: 'consultant',
     period: 'Oct 2020 – present',
-    industry: 'FinTech, Banking, Insurance',
+    industry: 'FinTech, Banking',
     highlights: [
       'Led and grew the Digipay engineering team from 7 to 12 engineers.',
       'Reduced cloud infrastructure costs by ~35% via cloud-native and serverless AWS architectures.',

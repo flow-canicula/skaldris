@@ -45,6 +45,10 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  authors: [{ name: 'Jaime Canicula', url: SITE_URL }],
+  creator: 'Jaime Canicula',
+  publisher: SITE_NAME,
+  applicationName: SITE_NAME,
   openGraph: {
     siteName: SITE_NAME,
     type: 'website',
@@ -60,6 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     images: [OG_IMAGE_URL],
+    creator: '@flow_canicula',
   },
   icons: {
     icon: [
@@ -84,7 +89,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="h-full">
       <head>
-        {/* eslint-disable-next-line react/no-danger */}
         <style dangerouslySetInnerHTML={{ __html: fontFaceCSS }} />
       </head>
       <body className="min-h-full flex flex-col" style={{ background: 'var(--color-surface-50)', color: 'var(--color-surface-700)' }}>

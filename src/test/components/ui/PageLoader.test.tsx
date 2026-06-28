@@ -85,10 +85,11 @@ describe('PageLoader – structure', () => {
     expect(container.querySelector('.screentone')).toBeInTheDocument();
   });
 
-  it('renders an SVG mark', () => {
+  it('renders the logo image mark', () => {
     setReducedMotion(false);
     const { container } = render(<PageLoader />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
+    // PageLoader uses an <img> for the mark, not inline SVG
+    expect(container.querySelector('img')).toBeInTheDocument();
   });
 
   it('renders the Skaldris wordmark', () => {

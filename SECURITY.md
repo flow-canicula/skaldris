@@ -1,4 +1,4 @@
-# Security Policy — Skaldris (www.skaldris.com)
+# Security Policy — Skaldris (flow.skaldris.com)
 
 The Skaldris site is a statically-exported Next.js 15 personal portfolio website
 (no server runtime, no database, no user authentication, no sessions). Most of

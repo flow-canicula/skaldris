@@ -127,14 +127,7 @@ describe('useReveal', () => {
     const root = makeContainer(1);
     const target = root.querySelector<HTMLElement>('[data-reveal]')!;
 
-    const TestComponent = () => {
-      const ref = useReveal();
-      // Attach the ref synchronously so the effect picks it up
-      (ref as React.MutableRefObject<HTMLElement>).current = root;
-      return null;
-    };
-
-    const { rerender } = renderHook(() => {
+    renderHook(() => {
       const ref = useReveal();
       (ref as React.MutableRefObject<HTMLElement>).current = root;
       return ref;

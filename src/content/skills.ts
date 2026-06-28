@@ -6,7 +6,7 @@ export type SkillCategory = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     label: 'Cloud & Infrastructure',
-    skills: ['AWS (Lambda, API GW, ECS, RDS, SQS, S3, CloudFront)', 'Azure', 'AWS Control Tower', 'Terraform', 'CloudFormation', 'OpenTofu', 'Ansible', 'Kubernetes', 'Docker'],
+    skills: ['AWS (Lambda, API GW, ECS, EKS, RDS, SQS, S3, CloudFront)', 'Azure', 'AWS Control Tower', 'Terraform', 'CloudFormation', 'OpenTofu', 'Ansible', 'Kubernetes', 'Docker'],
   },
   {
     label: 'Backend',

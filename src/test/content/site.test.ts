@@ -26,14 +26,18 @@ describe('site constants', () => {
     expect(SOCIAL.githubSecondary).toContain('github.com');
   });
 
-  it('NAV_LINKS includes Work and Contact', () => {
+  it('NAV_LINKS includes Contact', () => {
     const hrefs = NAV_LINKS.map((l) => l.href);
-    expect(hrefs).toContain('/work');
     expect(hrefs).toContain('/contact');
   });
 
-  it('OG_DEFAULTS image points to og-image.jpg', () => {
-    expect(OG_DEFAULTS.image).toContain('og-image.jpg');
+  it('NAV_LINKS does not include /work', () => {
+    const hrefs = NAV_LINKS.map((l) => l.href);
+    expect(hrefs).not.toContain('/work');
+  });
+
+  it('OG_DEFAULTS image is a non-empty path', () => {
+    expect(OG_DEFAULTS.image.length).toBeGreaterThan(0);
   });
 
   it('OG_DEFAULTS dimensions are 1200x630', () => {

@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "homeTitle": "Jaime Canicula — Technical Architect & AWS Expert, Philippines",
+    "homeDescription": "Technical Architect and AWS Certified Solutions Architect based in Metro Manila. 13+ years building cloud platforms, engineering teams, and distributed systems. Open to consulting and senior roles."
+  },
+  "hero": {
+    "eyebrow": "Technical Architect & Engineering Leader",
+    "name": "Jaime",
+    "handle": "\"Flow\"",
+    "surname": "Canicula",
+    "subtitle": "MTM · 13+ years building cloud platforms, engineering teams, and software systems — based in the Philippines with international experience across Vietnam, Singapore, Australia, and Hong Kong.",
+    "downloadCv": "Download CV",
+    "getInTouch": "Get in touch"
+  },
+  "philosophy": {
+    "eyebrow": "— Philosophy",
+    "line1": "Engineering that",
+    "accent1": "scales teams",
+    "line2": "Architecture that",
+    "accent2": "outlasts hype",
+    "line3": "Systems built for",
+    "accent3": "people first",
+    "caption": "Strategy before stack — every architecture decision is a people decision first."
+  },
+  "whatIDo": {
+    "eyebrow": "— What I do",
+    "heading": "Architect first. Engineer always.",
+    "body1": "I design systems that survive contact with reality — cloud platforms, distributed APIs, and data pipelines that stay up when it matters and scale when it counts.",
+    "body2": "That means AWS infrastructure you can govern, engineering teams you can grow, and code you can still read two years later. It's where nobody touches me: once an architecture exists, that's where I finish best.",
+    "stat1Value": "13+",
+    "stat1Label": "Years shipping\nproduction systems",
+    "stat2Value": "6×",
+    "stat2Label": "AWS certified\nacross all domains",
+    "stat3Value": "4.0",
+    "stat3Label": "GPA — MTM\nUP Diliman"
+  },
+  "about": {
+    "eyebrow": "01 — About",
+    "title": "Architect. Leader. Builder.",
+    "heading1": "Architect.",
+    "heading2": "Leader.",
+    "heading3": "Builder.",
+    "body1": "Technical Architect, Engineering Leader, and Senior Software Engineering Professional with extensive experience across software development, cloud architecture, DevOps, delivery management, and technical program delivery.",
+    "body2": "Currently serving as AWS Platform Technical Architect at Nityo Infotech (deployed to IBM for Synapxe), Cloud Architect at Webisoft, and Software Architect and Technical Manager at FSG Technology Ventures — where he led the Digipay engineering team and platform, a BSP-registered Operator of Payment System with 16,500+ merchant locations nationwide.",
+    "body3": "Graduate of the University of the Philippines Diliman (Master of Technology Management, GWA 1.11 / GPA 4.0, Parangal sa Mag-aaral for 2 consecutive years) and UP Los Banos (B.S. Computer Science)."
+  },
+  "experience": {
+    "eyebrow": "02 — Experience",
+    "title": "Last 10 Years",
+    "downloadCv": "Full CV ↓"
+  },
+  "skills": {
+    "eyebrow": "03 — Skills",
+    "title": "Technical Stack",
+    "countLabel": "technologies across"
+  },
+  "credentials": {
+    "eyebrow": "Certifications",
+    "title": "Credentials",
+    "issuedBy": "Issued by"
+  },
+  "portfolio": {
+    "eyebrow": "04 — Portfolio",
+    "title": "Selected Work",
+    "allProjects": "All projects →",
+    "visitSite": "Visit site →",
+    "googlePlay": "Google Play →"
+  },
+  "cta": {
+    "eyebrow": "Available for consulting & senior roles",
+    "line1": "Let's build",
+    "line2": "something.",
+    "body": "Open to Technical Architecture, Engineering Leadership, Project Management, AWS Cloud consulting, DevOps, and Web & Application Development engagements. Based in Mandaluyong City, Metro Manila — available remotely worldwide.",
+    "primaryCta": "Start a conversation",
+    "secondaryCta": "Download CV"
+  },
+  "footer": {
+    "wordmark": "Skaldris",
+    "github": "GitHub",
+    "copyright": "© {year} Skaldris"
+  },
+  "nav": {
+    "contact": "Contact"
+  },
+  "ticker": {
+    "services": [
+      "Technical Architecture",
+      "Cloud Engineering (AWS)",
+      "Engineering Leadership",
+      "Project & Program Management",
+      "Web & Application Development",
+      "DevOps & Platform Engineering"
+    ]
+  },
+  "contact": {
+    "meta": {
+      "title": "Hire a Technical Architect in the Philippines — Jaime Canicula",
+      "description": "Contact Jaime \"Flow\" Canicula — Technical Architect, AWS Certified Solutions Architect, and Engineering Leader based in Metro Manila, Philippines. Available for consulting and senior roles."
+    },
+    "hero": {
+      "eyebrow": "Open to new engagements",
+      "heading": "Let's work together.",
+      "subtitle": "Available for Technical Architecture, Engineering Leadership, AWS Cloud consulting, and senior software engineering roles — remote or on-site from Metro Manila.",
+      "primaryCta": "Send a message",
+      "secondaryCta": "Download CV"
+    },
+    "statement": {
+      "label": "— Availability",
+      "line1": "Serious work.",
+      "line2": "Serious builders.",
+      "line3": "Let's talk.",
+      "body": "Whether you're scaling a platform, staffing a senior role, or need a Technical Architect who can hold both the cloud and the code — reach out. I respond to every serious inquiry within one business day."
+    },
+    "handles": {
+      "email": {
+        "label": "Email",
+        "value": "jaimecanicula@skaldris.com",
+        "sub": "Responds within one business day"
+      },
+      "github": {
+        "label": "GitHub",
+        "value": "flow-canicula",
+        "sub": "Primary profile"
+      },
+      "github2": {
+        "label": "GitHub",
+        "value": "jrcanicula",
+        "sub": "Secondary profile"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Mandaluyong City",
+        "sub": "Metro Manila, Philippines · Remote worldwide"
+      }
+    },
+    "form": {
+      "heading": "Send a message.",
+      "eyebrow": "Direct inquiry",
+      "name": { "label": "Full name", "placeholder": "Your name" },
+      "email": { "label": "Email address", "placeholder": "you@example.com" },
+      "subject": { "label": "Subject", "placeholder": "What's this about?" },
+      "inquiryType": {
+        "label": "Inquiry type",
+        "options": [
+          "Cloud / Solutions Architecture",
+          "Technical Architecture",
+          "Engineering Leadership",
+          "AWS Consulting",
+          "Full-stack Development",
+          "Other"
+        ]
+      },
+      "message": { "label": "Message", "placeholder": "Tell me what you're building and how I can help." },
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "privacy": "Your details are used solely to respond to your inquiry.",
+      "successHeading": "Message received.",
+      "successBody": "I'll get back to you within one business day.",
+      "errorMessage": "That didn't send. Check your details and try again, or email me directly at jaimecanicula@skaldris.com."
+    },
+    "thanks": {
+      "eyebrow": "All done",
+      "heading": "Message received.",
+      "body": "I'll get back to you within one business day. In the meantime, you're welcome to browse the portfolio or download the CV.",
+      "backHome": "Back to home",
+      "viewWork": "View work"
+    }
+  }
+}

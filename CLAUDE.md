@@ -12,7 +12,7 @@ coherent. For the threat model and pre-launch checklist, read [`SECURITY.md`](./
 A personal portfolio website for **Jaime "Flow" Canicula, MTM** — Technical
 Architect, Engineering Leader, and Senior Software Engineering Professional based
 in Mandaluyong City, Metro Manila, Philippines. The site lives at
-**www.skaldris.com**.
+**flow.skaldris.com**.
 
 Jaime's professional identity is fully public. The site's job is to present that
 identity clearly and compellingly to two audiences:
@@ -45,7 +45,7 @@ drawn directly from the CV.
 **Full name:** Jaime Canicula, MTM
 **Handle:** Flow
 **Location:** Mandaluyong City, Metro Manila, Philippines
-**Email:** jaimecanicula@gmail.com
+**Email:** jaimecanicula@skaldris.com
 **GitHub:** https://github.com/flow-canicula · https://github.com/jrcanicula
 
 **Professional summary (from CV):**
@@ -243,7 +243,6 @@ to avoid CLS). Don't rely on Next to resize.
 │   ├── app/
 │   │   ├── layout.tsx        <- html, fonts, default metadata, JSON-LD Person/WebSite
 │   │   ├── page.tsx          <- Home (/) - hero, about, experience, skills, projects, CTA
-│   │   ├── work/page.tsx     <- Full project catalogue
 │   │   ├── contact/page.tsx  <- Contact / inquiry form
 │   │   ├── contact/thanks/page.tsx
 │   │   ├── not-found.tsx     <- designed 404
@@ -457,7 +456,7 @@ Treat as a release gate:
 
 ```
 # .env.local (never committed) and the host's build env
-NEXT_PUBLIC_SITE_URL=https://www.skaldris.com
+NEXT_PUBLIC_SITE_URL=https://flow.skaldris.com
 NEXT_PUBLIC_FORMSPREE_CONTACT_ID=xxxxxxxx
 # NEXT_PUBLIC_PLAUSIBLE_DOMAIN=skaldris.com   # only if analytics enabled
 ```

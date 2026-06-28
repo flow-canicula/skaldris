@@ -20,7 +20,9 @@ export function buildMetadata({
   keywords,
   noIndex = false,
 }: BuildMetadataOptions): Metadata {
-  const resolvedTitle = title ? `${title} — ${SITE_NAME}` : SITE_NAME;
+  const resolvedTitle = title
+    ? title.includes('—') ? title : `${title} — ${SITE_NAME}`
+    : SITE_NAME;
   const resolvedDescription = description ?? SITE_DESCRIPTION;
   const rawImage = ogImage ?? OG_DEFAULTS.image;
   // Always use an absolute URL so scrapers (Facebook, Twitter, Slack) never get a relative path
@@ -33,6 +35,9 @@ export function buildMetadata({
     title: resolvedTitle,
     description: resolvedDescription,
     ...(keywords && { keywords }),
+    authors: [{ name: 'Jaime Canicula', url: SITE_URL }],
+    creator: 'Jaime Canicula',
+    publisher: SITE_NAME,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -41,7 +46,9 @@ export function buildMetadata({
       description: resolvedDescription,
       url: canonicalUrl,
       siteName: SITE_NAME,
-      type: 'website',
+      type: 'profile',
+      firstName: 'Jaime',
+      lastName: 'Canicula',
       images: [
         {
           url: resolvedImage,
@@ -56,6 +63,7 @@ export function buildMetadata({
       title: resolvedTitle,
       description: resolvedDescription,
       images: [resolvedImage],
+      creator: '@flow_canicula',
     },
     robots: noIndex
       ? { index: false, follow: true }

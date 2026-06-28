@@ -22,14 +22,14 @@ export async function submitToFormspree(
     const json = (await res.json()) as { errors?: Array<{ message: string }> };
     const message =
       json.errors?.[0]?.message ??
-      'That did not send. Check your details and try again, or reach out on Instagram.';
+      'That did not send. Check your details and try again, or email jaimecanicula@skaldris.com directly.';
 
     return { ok: false, error: message };
   } catch {
     return {
       ok: false,
       error:
-        'Connection failed. Check your internet and try again, or reach out on Instagram.',
+        'Connection failed. Check your internet and try again, or email jaimecanicula@skaldris.com directly.',
     };
   }
 }

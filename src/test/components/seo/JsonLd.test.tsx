@@ -14,7 +14,7 @@ describe('JsonLd', () => {
   });
 
   it('serializes a single schema object', () => {
-    const schema = { '@type': 'WebSite', name: 'Skaldris', url: 'https://www.skaldris.com' };
+    const schema = { '@type': 'WebSite', name: 'Skaldris', url: 'https://flow.skaldris.com' };
     const { container } = render(<JsonLd schema={schema} />);
     const content = container.querySelector('script')?.innerHTML ?? '';
     expect(JSON.parse(content)).toEqual(schema);
