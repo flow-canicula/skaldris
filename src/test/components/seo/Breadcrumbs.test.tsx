@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 const items = [
-  { name: 'Jesuke', href: '/' },
+  { name: 'Skaldris', href: '/' },
   { name: 'Work', href: '/work' },
 ];
 
@@ -20,7 +20,7 @@ describe('Breadcrumbs', () => {
 
   it('renders a link for non-last items', () => {
     render(<Breadcrumbs items={items} />);
-    expect(screen.getByRole('link', { name: 'Jesuke' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Skaldris' })).toBeInTheDocument();
   });
 
   it('renders a span for the last item (current page)', () => {
@@ -36,12 +36,12 @@ describe('Breadcrumbs', () => {
   });
 
   it('renders single item without separator', () => {
-    render(<Breadcrumbs items={[{ name: 'Jesuke', href: '/' }]} />);
+    render(<Breadcrumbs items={[{ name: 'Skaldris', href: '/' }]} />);
     expect(screen.queryByText('/')).not.toBeInTheDocument();
   });
 
   it('link href is correct', () => {
     render(<Breadcrumbs items={items} />);
-    expect(screen.getByRole('link', { name: 'Jesuke' })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('link', { name: 'Skaldris' })).toHaveAttribute('href', '/');
   });
 });

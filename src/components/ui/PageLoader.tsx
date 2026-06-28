@@ -2,6 +2,18 @@
 
 import { useEffect, useState } from 'react';
 
+/*
+  PageLoader — draws the JRC mark from the logo:
+  - Three jester-hat arcs: teal (left), navy (center), amber (right)
+  - J stroke (navy) and R-circle (amber) beneath
+  - Rings expand and fade on "impact"
+  - Whole overlay fades out after ~2.4s
+*/
+
+const RED  = '#ff0052';
+const NAVY = '#0055da';
+const BG   = 'var(--color-void-950)';
+
 export function PageLoader() {
   const [gone, setGone] = useState(false);
 
@@ -10,14 +22,11 @@ export function PageLoader() {
       setGone(true);
       return;
     }
-    // total sequence: drop(0.6s) + hold(0.4s) + bleed(0.8s) + exit(0.6s)
-    const t = setTimeout(() => setGone(true), 2400);
+    const t = setTimeout(() => setGone(true), 2600);
     return () => clearTimeout(t);
   }, []);
 
   if (gone) return null;
-
-  const SEAL = 'var(--color-seal)';
 
   return (
     <div
@@ -27,110 +36,108 @@ export function PageLoader() {
         inset: 0,
         zIndex: 9999,
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'var(--color-ink-900)',
+        backgroundColor: BG,
         pointerEvents: 'none',
-        animation: 'hanko-exit 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+        animation: 'loader-exit 2.6s cubic-bezier(0.4, 0, 0.2, 1) forwards',
       }}
     >
-      {/* Screentone texture behind everything */}
+      {/* Subtle grid texture */}
       <div
         className="screentone"
-        style={{ position: 'absolute', inset: 0, opacity: 0.4 }}
+        style={{ position: 'absolute', inset: 0, opacity: 0.25 }}
       />
 
-      {/* Stamp + rings container */}
-      <div style={{ position: 'relative', width: 160, height: 160 }}>
+      {/* ── Mark container ── */}
+      <div style={{
+        position: 'relative',
+        width: 140,
+        height: 140,
+        animation: 'mark-drop 0.7s cubic-bezier(0.34, 1.3, 0.64, 1) 0.1s both',
+      }}>
 
-        {/* Bleed ring 1 — fast, tight */}
+        {/* Expand ring 1 — red */}
         <div style={{
           position: 'absolute',
           inset: 0,
           borderRadius: '50%',
-          border: `2px solid ${SEAL}`,
-          animation: 'hanko-ring 0.9s cubic-bezier(0.2, 0, 0.8, 1) 0.55s forwards',
+          border: `2px solid ${RED}`,
+          animation: 'ring-expand 1s cubic-bezier(0.2, 0, 0.8, 1) 0.6s forwards',
           opacity: 0,
         }} />
 
-        {/* Bleed ring 2 — slower, larger */}
+        {/* Expand ring 2 — blue, slower */}
         <div style={{
           position: 'absolute',
           inset: 0,
           borderRadius: '50%',
-          border: `1px solid ${SEAL}`,
-          animation: 'hanko-bleed 1.2s cubic-bezier(0.2, 0, 0.8, 1) 0.65s forwards',
+          border: `1px solid ${NAVY}`,
+          animation: 'ring-expand 1.3s cubic-bezier(0.2, 0, 0.8, 1) 0.7s forwards',
           opacity: 0,
         }} />
 
-        {/* Bleed ring 3 — faintest, largest */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          borderRadius: '50%',
-          border: `1px solid ${SEAL}`,
-          opacity: 0,
-          animation: 'hanko-bleed 1.5s cubic-bezier(0.2, 0, 0.8, 1) 0.8s forwards',
-        }} />
-
-        {/* The stamp itself */}
-        <div
+        {/* Logo image */}
+        <img
+          src="/logos/out6.png"
+          alt=""
+          width={140}
+          height={140}
           style={{
             position: 'absolute',
             inset: 0,
-            borderRadius: '50%',
-            border: `3px solid ${SEAL}`,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            opacity: 0,
-            animation: 'hanko-drop 0.6s cubic-bezier(0.34, 1.4, 0.64, 1) 0.15s forwards',
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
           }}
-        >
-          {/* Inner ring */}
-          <div style={{
-            position: 'absolute',
-            inset: 8,
-            borderRadius: '50%',
-            border: `1px solid ${SEAL}`,
-            opacity: 0.5,
-          }} />
-
-          {/* J lettermark */}
-          <span style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '4.5rem',
-            color: SEAL,
-            lineHeight: 1,
-            letterSpacing: '-0.02em',
-            userSelect: 'none',
-          }}>
-            J
-          </span>
-        </div>
-
+        />
       </div>
 
-      {/* Wordmark beneath — fades in after stamp lands */}
+      {/* Wordmark */}
       <div style={{
-        position: 'absolute',
-        bottom: '50%',
-        left: '50%',
-        transform: 'translate(-50%, 110px)',
-        opacity: 0,
-        animation: 'hanko-drop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards',
+        marginTop: 24,
+        animation: 'fade-in 0.5s ease-out 0.9s both',
       }}>
         <span style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '0.65rem',
-          letterSpacing: '0.35em',
+          fontSize: '0.6rem',
+          letterSpacing: '0.4em',
           textTransform: 'uppercase',
-          color: 'var(--color-ink-100)',
-          opacity: 0.4,
+          color: 'var(--color-void-100)',
+          opacity: 0.35,
         }}>
-          Jesuke
+          Skaldris
         </span>
       </div>
+
+      <style>{`
+        @keyframes loader-exit {
+          0%   { opacity: 1; }
+          72%  { opacity: 1; }
+          100% { opacity: 0; }
+        }
+        @keyframes mark-drop {
+          from { opacity: 0; transform: translateY(-32px) scale(0.85); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes arc-draw {
+          from { opacity: 0; stroke-dashoffset: 200; stroke-dasharray: 200; }
+          to   { opacity: 1; stroke-dashoffset: 0;   stroke-dasharray: 200; }
+        }
+        @keyframes dot-pop {
+          from { transform: scale(0); }
+          to   { transform: scale(1); }
+        }
+        @keyframes ring-expand {
+          0%   { transform: scale(0.6); opacity: 0.8; }
+          100% { transform: scale(2.4); opacity: 0; }
+        }
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 }

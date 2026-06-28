@@ -4,12 +4,12 @@ import { buildMetadata } from '@/lib/seo';
 describe('buildMetadata', () => {
   it('uses site name as title when no title provided', () => {
     const meta = buildMetadata({ canonical: '/' });
-    expect(meta.title).toBe('Jesuke');
+    expect(meta.title).toBe('Skaldris');
   });
 
   it('appends site name to page title', () => {
     const meta = buildMetadata({ title: 'Work', canonical: '/work' });
-    expect(meta.title).toBe('Work — Jesuke');
+    expect(meta.title).toBe('Work — Skaldris');
   });
 
   it('sets canonical URL', () => {
@@ -62,8 +62,8 @@ describe('buildMetadata', () => {
   });
 
   it('includes keywords when provided', () => {
-    const meta = buildMetadata({ canonical: '/', keywords: ['anime tattoo', 'manga tattoo'] });
-    expect(meta.keywords).toEqual(['anime tattoo', 'manga tattoo']);
+    const meta = buildMetadata({ canonical: '/', keywords: ['cloud architecture', 'software engineering'] });
+    expect(meta.keywords).toEqual(['cloud architecture', 'software engineering']);
   });
 
   it('omits keywords field when not provided', () => {

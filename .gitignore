@@ -18,6 +18,10 @@ Thumbs.db
 .vscode/settings.json
 .idea/
 
+# Claude Code
+.claude/
+CLAUDE.md
+
 # pnpm
 .pnpmfile.cjs
 

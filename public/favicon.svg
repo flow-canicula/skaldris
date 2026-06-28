@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <rect width="48" height="48" rx="6" fill="#0b0b0d"/>
-  <circle cx="24" cy="24" r="20" fill="#b23a2e"/>
-  <text x="24" y="34" font-family="Arial Black,Arial,sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">J</text>
+  <rect width="48" height="48" rx="8" fill="#060a14"/>
+  <!-- Jester hat arcs: teal left, blue center, gold right -->
+  <path d="M14 22 Q14 10 20 10 Q20 16 17 20" stroke="#00c68d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <circle cx="14" cy="22" r="1.4" fill="#00c68d"/>
+  <path d="M20 22 Q19 8 25 8 Q24 15 22 20" stroke="#0055da" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <circle cx="20" cy="22" r="1.4" fill="#0055da"/>
+  <path d="M26 24 Q27 11 33 12 Q30 18 28 23" stroke="#ffd400" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <circle cx="33" cy="12" r="1.4" fill="#ffd400"/>
+  <!-- J stroke — red -->
+  <path d="M17 24 Q17 36 22 38 Q28 40 28 34" stroke="#ff0052" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <!-- R circle — gold -->
+  <circle cx="29" cy="32" r="7" stroke="#ffd400" stroke-width="2" fill="none"/>
+  <text x="29" y="36" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#ffd400" text-anchor="middle">R</text>
 </svg>

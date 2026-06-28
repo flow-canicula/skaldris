@@ -19,18 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/booking`,
+      url: `${SITE_URL}/contact`,
       lastModified: now,
       changeFrequency: 'yearly',
       priority: 0.8,
     },
-    {
-      url: `${SITE_URL}/professional`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    // /booking/thanks and /professional/thanks are noindex — excluded from sitemap
+    // /contact/thanks is noindex — excluded from sitemap
     // /privacy is noindex — excluded from sitemap
   ];
 }

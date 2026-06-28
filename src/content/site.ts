@@ -1,32 +1,29 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://jesukeanimetattoo.skaldris.com';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.skaldris.com';
 
-
-export const SITE_NAME = 'Jesuke';
+export const SITE_NAME = 'Skaldris';
 
 export const SITE_DESCRIPTION =
-  'Jesuke — anime, manga & manhwa tattoo artist in Metro Manila and Bulacan, Philippines. Blackwork and fine-line only. Custom pieces and flash. Book a commission or browse the catalogue.';
+  'Personal portfolio of Jaime "Flow" Canicula, MTM — Technical Architect, Engineering Leader, and Senior Software Engineering Professional based in Metro Manila, Philippines.';
 
 export const SOCIAL = {
-  instagram: 'https://www.instagram.com/jesuke_anime',
-  instagramHandle: '@jesuke_anime',
-  facebook: 'https://www.facebook.com/jesukeanime',
+  githubPrimary: 'https://github.com/flow-canicula',
+  githubSecondary: 'https://github.com/jrcanicula',
 } as const;
 
 export const CONTACT = {
-  // TODO: replace with real contact/security email
-  security: 'security@jesuke.ink',
+  email: 'jaimecanicula@gmail.com',
+  security: 'security@skaldris.com',
 } as const;
 
 export const NAV_LINKS = [
   { label: 'Work', href: '/work' },
-  { label: 'Commission', href: '/booking' },
-  { label: 'Professional', href: '/professional' },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const OG_DEFAULTS = {
   image: '/og/og-image.jpg',
   imageWidth: 1200,
   imageHeight: 630,
-  imageAlt: 'Jesuke — anime, manga, and manhwa tattoo artist, Philippines',
+  imageAlt: 'Jaime "Flow" Canicula — Technical Architect and Engineering Leader, Philippines',
 } as const;

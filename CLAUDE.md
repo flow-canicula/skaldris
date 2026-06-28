@@ -23,10 +23,6 @@ identity clearly and compellingly to two audiences:
 2. **Potential employers** — recruiting teams evaluating Jaime for senior
    engineering, architecture, or leadership roles.
 
-Design reference: **Henry Z** (`henryz.webflow.io`) — narrative-driven, editorial,
-sleek. The layout should tell a professional story as the visitor scrolls, not
-dump a feature list on a page.
-
 It is a **static site** — no server runtime, no database, no auth, no sessions.
 If a task seems to require any of those, stop and re-read this section.
 
@@ -293,25 +289,38 @@ components.
 
 ### Color tokens (define in `globals.css` `@theme`)
 
+The site is **light throughout**. Dark sections (`surface-900`) are used only
+for the CTA and footer. The four brand accent colors must not be substituted.
+
 ```css
 @theme {
-  /* Dark surface - hero, featured sections */
-  --color-void-950: #09090b;
-  --color-void-900: #111113;
-  --color-void-800: #18181b;
-  --color-void-100: #a1a1aa;   /* muted text on dark */
+  /* Light surfaces — crisp white base */
+  --color-surface-50:  #ffffff;
+  --color-surface-100: #f7f7f8;
+  --color-surface-200: #eeeff2;
+  --color-surface-300: #e2e3e8;
+  --color-surface-700: #2c2d32; /* body text */
+  --color-surface-900: #111214; /* dark CTA / footer */
 
-  /* Light surface - about, skills, contact */
-  --color-surface-50:  #fafafa;
-  --color-surface-100: #f4f4f5;
-  --color-surface-700: #3f3f46; /* body text on light */
+  /* Brand accents — the four non-negotiable palette colors */
+  --color-accent:       #ff0052; /* red — primary CTA, hero name, highlights */
+  --color-accent-hover: #d4003f;
+  --color-teal:         #00c68d; /* green — eyebrows, secondary signals */
+  --color-teal-hover:   #00a376;
+  --color-gold:         #ffd400; /* yellow — tech tags, tertiary details */
+  --color-gold-dark:    #b89600;
+  --color-blue:         #0055da; /* blue — borders, section eyebrows, structure */
+  --color-blue-light:   #e8effe;
 
-  /* Accent - links, hover states, active indicators. Used sparingly. */
-  --color-accent: #6366f1;      /* adjust to final brand decision */
+  /* Lines and tone — light mode */
+  --color-line: rgba(0 0 0 / 0.08);
+  --color-tone: rgba(0 85 218 / 0.04);
 
-  /* Structure */
-  --color-border:       rgba(255,255,255,0.08);
-  --color-border-light: rgba(0,0,0,0.08);
+  /* Legacy dark tokens — used only in dark sections */
+  --color-void-950: #06080f;
+  --color-void-900: #0b0e18;
+  --color-void-800: #0f1320;
+  --color-void-100: #c8ccdc;
 }
 ```
 

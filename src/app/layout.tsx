@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { buildPersonSchema, buildWebSiteSchema } from '@/lib/jsonld';
 import { Analytics } from '@vercel/analytics/react';
 import { PageLoader } from '@/components/ui/PageLoader';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, OG_DEFAULTS } from '@/content/site';
 
 const OG_IMAGE_URL = `${SITE_URL}${OG_DEFAULTS.image}`;
@@ -15,15 +16,15 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const fontFaceCSS = `
 @font-face {
-  font-family: 'Anton';
-  src: url('${base}/fonts/Anton-Regular.woff2') format('woff2');
+  font-family: 'Fugaz One';
+  src: url('${base}/fonts/FugazOne-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('${base}/fonts/Inter-Variable.woff2') format('woff2');
+  font-family: 'Work Sans';
+  src: url('${base}/fonts/WorkSans-Variable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -86,14 +87,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* eslint-disable-next-line react/no-danger */}
         <style dangerouslySetInnerHTML={{ __html: fontFaceCSS }} />
       </head>
-      <body className="min-h-full flex flex-col bg-ink-900 text-ink-100">
+      <body className="min-h-full flex flex-col" style={{ background: 'var(--color-surface-50)', color: 'var(--color-surface-700)' }}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-ink-800 focus:text-paper-50 focus:rounded"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-void-800 focus:text-surface-50 focus:rounded"
         >
           Skip to main content
         </a>
         <PageLoader />
+        <ScrollReveal />
         <Header />
         <main id="main-content" className="flex-1">
           {children}

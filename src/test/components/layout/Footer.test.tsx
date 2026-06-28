@@ -8,26 +8,9 @@ describe('Footer', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
   });
 
-  it('renders Instagram link', () => {
+  it('renders GitHub link', () => {
     render(<Footer />);
-    expect(screen.getByRole('link', { name: /instagram/i })).toBeInTheDocument();
-  });
-
-  it('renders Facebook link', () => {
-    render(<Footer />);
-    expect(screen.getByRole('link', { name: /facebook/i })).toBeInTheDocument();
-  });
-
-  it('social links open in new tab', () => {
-    render(<Footer />);
-    const igLink = screen.getByRole('link', { name: /instagram/i });
-    expect(igLink).toHaveAttribute('target', '_blank');
-    expect(igLink).toHaveAttribute('rel', expect.stringContaining('noopener'));
-  });
-
-  it('renders Privacy link', () => {
-    render(<Footer />);
-    expect(screen.getByRole('link', { name: /privacy/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /github/i })).toBeInTheDocument();
   });
 
   it('renders copyright with current year', () => {
@@ -36,13 +19,8 @@ describe('Footer', () => {
     expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
   });
 
-  it('renders Jesuke brand text', () => {
+  it('renders the Skaldris brand name', () => {
     render(<Footer />);
-    expect(screen.getByText(/signed, jesuke/i)).toBeInTheDocument();
-  });
-
-  it('renders social links nav with aria-label', () => {
-    render(<Footer />);
-    expect(screen.getByRole('navigation', { name: /social links/i })).toBeInTheDocument();
+    expect(screen.getByText(/skaldris/i)).toBeInTheDocument();
   });
 });

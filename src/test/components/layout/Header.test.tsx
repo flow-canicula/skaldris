@@ -8,20 +8,20 @@ describe('Header', () => {
     expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 
-  it('renders the Jesuke home link', () => {
+  it('renders the home link', () => {
     render(<Header />);
-    expect(screen.getByRole('link', { name: /jesuke.*home/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /skaldris.*home/i })).toBeInTheDocument();
   });
 
   it('home link points to /', () => {
     render(<Header />);
-    const link = screen.getByRole('link', { name: /jesuke.*home/i });
+    const link = screen.getByRole('link', { name: /skaldris.*home/i });
     expect(link).toHaveAttribute('href', '/');
   });
 
   it('renders the wordmark text', () => {
     render(<Header />);
-    expect(screen.getByText('Jesuke')).toBeInTheDocument();
+    expect(screen.getByText(/skaldris/i)).toBeInTheDocument();
   });
 
   it('renders navigation', () => {

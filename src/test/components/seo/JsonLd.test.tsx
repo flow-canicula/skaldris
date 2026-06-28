@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 
 describe('JsonLd', () => {
   it('renders a script tag', () => {
-    const { container } = render(<JsonLd schema={{ '@type': 'WebSite', name: 'Jesuke' }} />);
+    const { container } = render(<JsonLd schema={{ '@type': 'WebSite', name: 'Skaldris' }} />);
     expect(container.querySelector('script')).toBeInTheDocument();
   });
 
@@ -14,7 +14,7 @@ describe('JsonLd', () => {
   });
 
   it('serializes a single schema object', () => {
-    const schema = { '@type': 'WebSite', name: 'Jesuke', url: 'https://www.jesuke.ink' };
+    const schema = { '@type': 'WebSite', name: 'Skaldris', url: 'https://www.skaldris.com' };
     const { container } = render(<JsonLd schema={schema} />);
     const content = container.querySelector('script')?.innerHTML ?? '';
     expect(JSON.parse(content)).toEqual(schema);
@@ -22,8 +22,8 @@ describe('JsonLd', () => {
 
   it('serializes an array of schemas', () => {
     const schemas = [
-      { '@type': 'WebSite', name: 'Jesuke' },
-      { '@type': 'Person', name: 'Jesuke' },
+      { '@type': 'WebSite', name: 'Skaldris' },
+      { '@type': 'Person', name: 'Jaime Canicula' },
     ];
     const { container } = render(<JsonLd schema={schemas} />);
     const content = container.querySelector('script')?.innerHTML ?? '';

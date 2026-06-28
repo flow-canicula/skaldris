@@ -1,5 +1,4 @@
-import { SITE_NAME, SITE_URL, SOCIAL } from '@/content/site';
-import type { FaqEntry } from '@/content/faq';
+import { SITE_NAME, SITE_URL, SOCIAL, CONTACT } from '@/content/site';
 
 type JsonLdObject = Record<string, unknown>;
 
@@ -7,60 +6,48 @@ export function buildPersonSchema(): JsonLdObject {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: SITE_NAME,
-    jobTitle: 'Anime, manga, and manhwa tattoo artist',
+    name: 'Jaime Canicula',
+    alternateName: 'Flow',
+    jobTitle: 'Technical Architect',
+    description:
+      'Technical Architect, Engineering Leader, and Senior Software Engineering Professional with 13+ years of experience across software development, cloud architecture (AWS), DevOps, and technical program delivery. Based in Mandaluyong City, Metro Manila, Philippines.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Mandaluyong City',
+      addressRegion: 'Metro Manila',
+      addressCountry: 'PH',
+    },
+    email: CONTACT.email,
+    url: SITE_URL,
+    sameAs: [SOCIAL.githubPrimary, SOCIAL.githubSecondary],
     knowsAbout: [
-      'Anime tattoo design',
-      'Manga tattoo design',
-      'Manhwa tattoo design',
-      'Korean anime tattooing',
-      'Blackwork tattooing',
-      'Fine-line tattooing',
-      'Anime-inspired illustration',
-      'Manga-inspired linework',
+      'Cloud Architecture (AWS)',
+      'Software Architecture',
+      'Engineering Leadership',
+      'DevOps and CI/CD',
+      'Microservices',
+      'Infrastructure as Code',
+      'Agile Delivery',
+      'Team Leadership and Mentoring',
+      'TypeScript',
+      'React',
+      'Next.js',
+      'C#/.NET',
+      'Node.js',
+      'Kubernetes',
+      'Terraform',
     ],
-    description: 'Tattoo artist based in Metro Manila and Bulacan, Philippines, who exclusively creates anime, manga, and manhwa tattoos. Original blackwork and fine-line pieces only — no other styles accepted.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Metro Manila',
-      addressRegion: 'Bulacan',
-      addressCountry: 'PH',
-    },
-    areaServed: [
-      { '@type': 'AdministrativeArea', name: 'Metro Manila' },
-      { '@type': 'AdministrativeArea', name: 'National Capital Region' },
-      { '@type': 'City', name: 'Bulacan' },
+    hasCredential: [
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Solutions Architect – Professional' },
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Solutions Architect – Associate' },
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Developer – Associate' },
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified SysOps Administrator – Associate' },
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Cloud Practitioner' },
+      { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified AI Practitioner' },
+      { '@type': 'EducationalOccupationalCredential', name: 'Professional Scrum Master II (PSM II)' },
+      { '@type': 'EducationalOccupationalCredential', name: 'Professional Scrum Master I (PSM I)' },
+      { '@type': 'EducationalOccupationalCredential', name: 'Professional Scrum Product Owner I (PSPO I)' },
     ],
-    sameAs: [SOCIAL.instagram, SOCIAL.facebook],
-    url: SITE_URL,
-  };
-}
-
-export function buildLocalBusinessSchema(): JsonLdObject {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/#business`,
-    name: 'Jesuke Anime Tattoo',
-    description: 'Anime, manga, and manhwa tattoo artist based in Metro Manila and Bulacan, Philippines. Custom blackwork and fine-line pieces only.',
-    url: SITE_URL,
-    image: `${SITE_URL}/og/og-image.jpg`,
-    priceRange: '₱₱',
-    currenciesAccepted: 'PHP',
-    paymentAccepted: 'Cash, GCash',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Metro Manila',
-      addressRegion: 'Bulacan',
-      addressCountry: 'PH',
-    },
-    areaServed: [
-      { '@type': 'AdministrativeArea', name: 'Metro Manila' },
-      { '@type': 'AdministrativeArea', name: 'National Capital Region' },
-      { '@type': 'City', name: 'Bulacan' },
-    ],
-    sameAs: [SOCIAL.instagram, SOCIAL.facebook],
-    hasMap: `https://maps.google.com/?q=Bulacan,Philippines`,
   };
 }
 
@@ -70,37 +57,6 @@ export function buildWebSiteSchema(): JsonLdObject {
     '@type': 'WebSite',
     name: SITE_NAME,
     url: SITE_URL,
-  };
-}
-
-export function buildServiceSchema(): JsonLdObject {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Custom tattoo commission',
-    provider: {
-      '@type': 'Person',
-      name: SITE_NAME,
-    },
-    serviceType: 'Anime, manga, and manhwa tattooing',
-    description:
-      'Anime, manga, and manhwa tattoos only — original pieces designed to specification. Blackwork and fine-line. Based in Bulacan, Philippines. No other tattoo styles accepted. Commissions open via inquiry form.',
-    url: `${SITE_URL}/booking`,
-  };
-}
-
-export function buildFaqSchema(entries: FaqEntry[]): JsonLdObject {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: entries.map((entry) => ({
-      '@type': 'Question',
-      name: entry.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: entry.answer,
-      },
-    })),
   };
 }
 

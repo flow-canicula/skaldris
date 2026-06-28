@@ -1,84 +1,63 @@
-import Link from 'next/link';
+import Image from 'next/image';
 import { SOCIAL } from '@/content/site';
-import { Seal } from './Seal';
 
 export function Footer() {
   return (
     <footer
       className="border-t"
-      style={{ background: 'var(--color-ink-900)', borderColor: 'var(--color-line)' }}
+      style={{ background: 'var(--color-surface-900)', borderColor: 'rgba(255,255,255,0.06)' }}
     >
-      {/* Top strip — large display text */}
+      {/* Stripe bar at top */}
+      <div className="h-[2px] stripe-bar" aria-hidden="true" />
+
+      {/* Top strip — wordmark only */}
       <div
-        className="border-b px-6 py-10 overflow-hidden"
-        style={{ borderColor: 'var(--color-line)' }}
+        className="border-b px-6 py-12"
+        style={{ borderColor: 'rgba(255,255,255,0.06)' }}
       >
-        <p
-          className="font-display leading-none select-none"
+        <span
+          className="font-display tracking-[0.22em] uppercase select-none"
           style={{
-            fontSize: 'clamp(3rem, 12vw, 8rem)',
-            color: 'var(--color-ink-800)',
-            letterSpacing: '-0.02em',
+            fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+            color: 'rgba(255,255,255,0.12)',
           }}
-          aria-hidden="true"
         >
-          Jesuke.
-        </p>
+          Skaldris
+        </span>
       </div>
 
       {/* Bottom row */}
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-        {/* Signature */}
-        <div className="flex items-center gap-4">
-          <Seal size={36} />
-          <p className="text-sm" style={{ color: 'var(--color-ink-100)', opacity: 0.5 }}>
-            Signed, Jesuke.
-          </p>
-        </div>
+        {/* Logo */}
+        <Image
+          src="/logos/out6.png"
+          alt="Jaime 'Flow' Canicula"
+          width={120}
+          height={150}
+          className="h-16 w-auto object-contain opacity-50"
+        />
 
-        {/* Social */}
+        {/* Links */}
         <nav aria-label="Social links">
           <ul className="flex gap-8" role="list">
             <li>
               <a
-                href={SOCIAL.instagram}
-                className="eyebrow opacity-50 hover:opacity-100 transition-opacity"
-                style={{ color: 'var(--color-ink-100)' }}
+                href={SOCIAL.githubPrimary}
+                className="eyebrow footer-gh-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Jesuke on Instagram"
+                aria-label="GitHub (flow-canicula)"
               >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href={SOCIAL.facebook}
-                className="eyebrow opacity-50 hover:opacity-100 transition-opacity"
-                style={{ color: 'var(--color-ink-100)' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Jesuke on Facebook"
-              >
-                Facebook
+                GitHub
               </a>
             </li>
           </ul>
         </nav>
 
         {/* Legal */}
-        <div className="flex items-center gap-6">
-          <Link
-            href="/privacy"
-            className="eyebrow transition-opacity"
-            style={{ color: 'var(--color-ink-100)', opacity: 0.3, fontSize: '0.65rem' }}
-          >
-            Privacy
-          </Link>
-          <p className="eyebrow" style={{ color: 'var(--color-ink-100)', opacity: 0.2, fontSize: '0.65rem' }}>
-            © {new Date().getFullYear()} Jesuke
-          </p>
-        </div>
+        <p className="eyebrow" style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.65rem' }}>
+          &copy; {new Date().getFullYear()} Skaldris
+        </p>
       </div>
     </footer>
   );

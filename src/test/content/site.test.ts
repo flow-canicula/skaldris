@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SOCIAL, NAV_LINKS, OG_DEFAULTS } from '@/content/site';
 
 describe('site constants', () => {
-  it('SITE_NAME is Jesuke', () => {
-    expect(SITE_NAME).toBe('Jesuke');
+  it('SITE_NAME is Skaldris', () => {
+    expect(SITE_NAME).toBe('Skaldris');
   });
 
   it('SITE_URL is a valid URL', () => {
@@ -14,25 +14,22 @@ describe('site constants', () => {
     expect(SITE_DESCRIPTION.length).toBeGreaterThan(10);
   });
 
-  it('SITE_DESCRIPTION contains anime and Philippines', () => {
-    expect(SITE_DESCRIPTION.toLowerCase()).toContain('anime');
+  it('SITE_DESCRIPTION mentions Philippines', () => {
     expect(SITE_DESCRIPTION.toLowerCase()).toContain('philippines');
   });
 
-  it('SOCIAL has instagram and facebook', () => {
-    expect(SOCIAL.instagram).toContain('instagram.com');
-    expect(SOCIAL.facebook).toContain('facebook.com');
+  it('SOCIAL has primary GitHub handle', () => {
+    expect(SOCIAL.githubPrimary).toContain('github.com');
   });
 
-  it('SOCIAL does not expose a real name', () => {
-    expect(SOCIAL.instagramHandle).toContain('jesuke');
+  it('SOCIAL has secondary GitHub handle', () => {
+    expect(SOCIAL.githubSecondary).toContain('github.com');
   });
 
-  it('NAV_LINKS includes Work, Commission, Professional', () => {
+  it('NAV_LINKS includes Work and Contact', () => {
     const hrefs = NAV_LINKS.map((l) => l.href);
     expect(hrefs).toContain('/work');
-    expect(hrefs).toContain('/booking');
-    expect(hrefs).toContain('/professional');
+    expect(hrefs).toContain('/contact');
   });
 
   it('OG_DEFAULTS image points to og-image.jpg', () => {
