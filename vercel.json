@@ -1,6 +1,5 @@
 {
   "framework": "nextjs",
-  "outputDirectory": "out",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://flow.skaldris.com"
   },
