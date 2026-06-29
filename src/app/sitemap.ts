@@ -9,13 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${SITE_URL}/contact`,
       lastModified: now,
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     // /contact/thanks is noindex — excluded from sitemap
