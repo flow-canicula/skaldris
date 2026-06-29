@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 /*
   PageLoader — draws the JRC mark from the logo:
@@ -79,18 +80,12 @@ export function PageLoader() {
         }} />
 
         {/* Logo image */}
-        <img
+        <Image
           src="/logos/out6.png"
           alt=""
-          width={140}
-          height={140}
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-          }}
+          fill
+          style={{ objectFit: 'contain' }}
+          priority
         />
       </div>
 

@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <Footer />
         <JsonLd schema={[buildPersonSchema(), buildWebSiteSchema()]} />
-        <Analytics />
+        {process.env.NEXT_PUBLIC_VERCEL_ENV && <Analytics />}
       </body>
     </html>
   );

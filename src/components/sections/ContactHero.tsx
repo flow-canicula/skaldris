@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import SplitType from 'split-type';
+import Image from 'next/image';
 import { t } from '@/lib/messages';
 
 export function ContactHero() {
@@ -91,13 +92,17 @@ export function ContactHero() {
       <div
         ref={bgRef}
         aria-hidden="true"
-        className="absolute inset-0 scale-110"
-        style={{
-          backgroundImage: 'url(/backgrounds/IMG_3347.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-        }}
-      />
+        className="absolute inset-0 scale-110 overflow-hidden"
+      >
+        <Image
+          src="/backgrounds/IMG_3347.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_40%]"
+          priority
+        />
+      </div>
 
       {/* ── Layer 2: dark gradient veil ────────────────────────────────── */}
       <div

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { t } from '@/lib/messages';
 
 export function CtaSection() {
@@ -11,14 +12,18 @@ export function CtaSection() {
       {/* Background photo */}
       <div
         aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/backgrounds/IMG_3454.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-          animation: 'hero-drift 36s ease-in-out infinite alternate',
-        }}
-      />
+        className="absolute inset-0 overflow-hidden"
+        style={{ animation: 'hero-drift 36s ease-in-out infinite alternate' }}
+      >
+        <Image
+          src="/backgrounds/IMG_3454.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_40%]"
+          priority={false}
+        />
+      </div>
 
       {/* Vignette — heavy dark centre-weighted overlay for text contrast */}
       <div
@@ -98,7 +103,7 @@ export function CtaSection() {
           >
             {t.cta.primaryCta}
           </Link>
-          <a
+          <Link
             href="/cv/CV-Jaime_Canicula_Resume-May-2026.pdf"
             download
             className="btn-secondary inline-flex items-center gap-2 px-8 py-4 font-mono text-xs uppercase tracking-widest border"
@@ -110,7 +115,7 @@ export function CtaSection() {
             }}
           >
             {t.cta.secondaryCta}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { WORK_HISTORY } from '@/content/experience';
 import { t } from '@/lib/messages';
 
@@ -6,14 +8,14 @@ export function ExperienceSection() {
     <div className="max-w-6xl mx-auto px-6 pb-16 pt-4">
       <h2 id="experience-heading" className="sr-only">Experience</h2>
       <div className="flex justify-end mb-6">
-        <a
+        <Link
           href="/cv/CV-Jaime_Canicula_Resume-May-2026.pdf"
           download
           className="btn-secondary font-mono text-xs uppercase tracking-widest px-4 py-2 border"
           style={{ borderColor: 'var(--color-line)', color: 'var(--color-surface-700)' }}
         >
           {t.experience.downloadCv}
-        </a>
+        </Link>
       </div>
       <div className="space-y-0">
         {WORK_HISTORY.map((entry, i) => (
@@ -33,7 +35,7 @@ export function ExperienceSection() {
                 <ul className="space-y-1.5">
                   {entry.highlights.map((h, j) => (
                     <li key={j} className="text-sm flex gap-3 items-start" style={{ color: 'var(--color-surface-700)', opacity: 0.65 }}>
-                      <img src="/motifs/documentation.svg" alt="" aria-hidden="true" width={16} height={16} style={{ flexShrink: 0, marginTop: '2px', opacity: 0.7 }} />
+                      <Image src="/motifs/documentation.svg" alt="" aria-hidden={true} width={16} height={16} style={{ flexShrink: 0, marginTop: '2px', opacity: 0.7 }} />
                       {h}
                     </li>
                   ))}

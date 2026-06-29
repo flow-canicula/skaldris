@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
@@ -121,13 +122,17 @@ export function HeroSection() {
       <div
         ref={imageRef}
         aria-hidden="true"
-        className="absolute inset-0 scale-110"
-        style={{
-          backgroundImage: 'url(/backgrounds/IMG_3347.jpeg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
-        }}
-      />
+        className="absolute inset-0 scale-110 overflow-hidden"
+      >
+        <Image
+          src="/backgrounds/IMG_3347.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_30%]"
+          priority
+        />
+      </div>
 
       {/* Dark overlay */}
       <div
@@ -187,14 +192,14 @@ export function HeroSection() {
           </p>
 
           <div ref={buttonsRef} className="flex flex-wrap gap-4">
-            <a
+            <Link
               href="/cv/CV-Jaime_Canicula_Resume-May-2026.pdf"
               download
               className="btn-primary inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-widest font-bold"
               style={{ background: 'var(--color-accent)', color: '#fff' }}
             >
               Download CV
-            </a>
+            </Link>
             <Link
               href="/contact"
               className="btn-secondary inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-widest border"
