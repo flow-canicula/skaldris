@@ -8,10 +8,9 @@ const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
-    // Custom loader prepends basePath so static exports under a sub-path
-    // (e.g. GitHub Pages /skaldris/) resolve all image src paths correctly.
-    loader: 'custom',
-    loaderFile: './src/lib/imageLoader.ts',
+    // Static export has no image optimization server; next/image components
+    // use the img() helper from lib/imageLoader to prepend basePath manually.
+    unoptimized: true,
   },
   reactStrictMode: true,
   ...(basePath && {

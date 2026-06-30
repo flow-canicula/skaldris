@@ -2,11 +2,11 @@
 
 ## Who Jaime is
 
-Jaime Canicula, MTM — known professionally as "Flow" — is a Technical Architect,
-Engineering Leader, and Senior Software Engineering Professional based in
-Mandaluyong City, Metro Manila, Philippines. He has 13+ years of experience
-across software development, cloud architecture (AWS), DevOps, delivery
-management, and technical program delivery.
+Jaime Canicula, MTM — known professionally as "Flow" — is a Filipino Technical
+Architect, Engineering Leader, and Senior Software Engineering Professional with
+13+ years of experience across software development, cloud architecture (AWS),
+DevOps, delivery management, and technical program delivery. Based in the
+Philippines and trusted by teams across Singapore, Australia, Hong Kong, and Vietnam.
 
 ## Current roles (as of 2026)
 

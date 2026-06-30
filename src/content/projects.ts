@@ -226,6 +226,38 @@ export const PROJECTS: Project[] = [
     imageAlt: 'Skog Mộc by TNP — architecture and design studio, residential project, Biên Hòa, Vietnam',
   },
 
+  // ── Hola ─────────────────────────────────────────────────────────
+  {
+    id: 'hola',
+    name: 'Cafe Hola',
+    slug: 'hola',
+    tagline: 'Marketing site for the original Kapampangan bakery, with 20 branches across Luzon.',
+    description:
+      'Marketing website for Cafe Hola, the original Kapampangan bakery from Pampanga, Philippines, known for cream cheese ensaymada, cheese bread bites, and pillow-soft bread, operating 20 branches across Luzon. Built with Next.js and Tailwind CSS, the site presents the menu, brand story, branch locations, ordering options, and franchising information, and routes orders to Facebook and Foodpanda.',
+    role: ['Lead Engineer'],
+    company: 'Skaldris / Freelance',
+    industry: 'Food & Beverage / Bakery',
+    period: '2025 – present',
+    platforms: ['web'],
+    status: 'live',
+    urls: {
+      site: 'https://hola-omega-eight.vercel.app/',
+      primary: 'https://hola-omega-eight.vercel.app/',
+    },
+    highlights: [
+      'Marketing site covering Home, Menu, About, Branches, Order, and Franchising sections.',
+      'Brand-led hero presenting Cafe Hola as the original Kapampangan bakery with 20 branches across Luzon.',
+      'Order flow routes visitors to Facebook (TheCafeHola) and Foodpanda for fulfillment, with branch listings for pickup.',
+      'Static, fast-loading marketing site built with Next.js and Tailwind CSS.',
+    ],
+    tech: ['Next.js', 'Tailwind CSS'],
+    featured: true,
+    image: '/work/hola/cover.jpg',
+    imageWidth: 1200,
+    imageHeight: 798,
+    imageAlt: 'Cafe Hola — the original Kapampangan bakery, marketing site',
+  },
+
   // ── Digipay ──────────────────────────────────────────────────────
   {
     id: 'digipay',

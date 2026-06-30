@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { PROJECTS, FEATURED_PROJECTS } from '@/content/projects';
 
 describe('PROJECTS', () => {
-  it('has 5 items', () => {
-    expect(PROJECTS).toHaveLength(5);
+  it('has 6 items', () => {
+    expect(PROJECTS).toHaveLength(6);
   });
 
   it('Digipay is featured', () => {
@@ -46,12 +46,13 @@ describe('PROJECTS', () => {
     expect(FEATURED_PROJECTS).toEqual(expected);
   });
 
-  it('includes Jesuke, TNP, Solar, Design, and Digipay', () => {
+  it('includes Jesuke, TNP, Solar, Design, Hola, and Digipay', () => {
     const ids = PROJECTS.map((p) => p.id);
     expect(ids).toContain('jesuke');
     expect(ids).toContain('tnp');
     expect(ids).toContain('solar');
     expect(ids).toContain('design');
+    expect(ids).toContain('hola');
     expect(ids).toContain('digipay');
   });
 });
